@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article below."
+title: "Code and archived results for: When Do Data-Driven Models Improve Runway-Configuration Forecasts? Multi-Horizon Operational Evidence from São Paulo/Guarulhos"
+type: software
+url: "https://orbolato.github.io/publications/runway-configuration-forecasting/"
+repository-code: "https://github.com/Orbolato/SBGR-Runway-Configuration-Forecasts"
+authors:
+  - family-names: Vieira
+    given-names: Gabriel Luiz Goulart Rufino
+    affiliation: Aeronautics Institute of Technology (ITA)
+  - family-names: Gomes
+    given-names: Igor Galhano
+    affiliation: Aeronautics Institute of Technology (ITA)
+  - family-names: Carvalho
+    given-names: Lucas Orbolato
+    affiliation: Aeronautics Institute of Technology (ITA)
+    orcid: "https://orcid.org/0000-0002-8402-5832"
+  - family-names: Guterres
+    given-names: Marcelo Xavier
+    affiliation: Aeronautics Institute of Technology (ITA)
+  - family-names: da Silva
+    given-names: Evandro José
+    affiliation: Aeronautics Institute of Technology (ITA)
+  - family-names: Caetano
+    given-names: Mauro
+    affiliation: Aeronautics Institute of Technology (ITA)
+preferred-citation:
+  type: article
+  title: "When Do Data-Driven Models Improve Runway-Configuration Forecasts? Multi-Horizon Operational Evidence from São Paulo/Guarulhos"
+  journal: "Journal of Air Transport Management"
+  year: 2026
+  authors:
+    - family-names: Vieira
+      given-names: Gabriel Luiz Goulart Rufino
+    - family-names: Gomes
+      given-names: Igor Galhano
+    - family-names: Carvalho
+      given-names: Lucas Orbolato
+    - family-names: Guterres
+      given-names: Marcelo Xavier
+    - family-names: da Silva
+      given-names: Evandro José
+    - family-names: Caetano
+      given-names: Mauro
+  notes: "Accepted for publication in 2026. Manuscript JATM-D-26-00770; DOI, volume, and article number were not yet assigned when this repository was prepared."
