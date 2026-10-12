@@ -1,6 +1,6 @@
 # When Do Data-Driven Models Improve Runway-Configuration Forecasts?
 
-Code, public data, and archived results for the article
+Code, data-provenance instructions, and archived results for the article
 
 > Vieira, G. L. G. R., Gomes, I. G., Carvalho, L. O., Guterres, M. X., da Silva, E. J.,
 > and Caetano, M. *When Do Data-Driven Models Improve Runway-Configuration Forecasts?
@@ -29,7 +29,7 @@ code/
                       results record, Tables 3-10, the prose macros, and Figures 1-7
   make_figures.py     draws Figures 1-7 from the results record (no refitting)
   verify_outputs.py   checks a rerun against the archived results
-data/                 public source data plus restricted-data instructions; see data/README.md
+data/                 source-data provenance and local-file instructions; see data/README.md
 results/
   analysis_results.json   archived results record behind every reported number
   figure_data.json        plotted series not held in the record (Figures 4, 5b, 6a)
@@ -70,7 +70,7 @@ Rscript -e "install.packages('data.table')"   # full rerun only
 
 ## Reproduction
 
-### 1. Without the restricted data (tables, macros, and figures)
+### 1. Without the source data (tables, macros, and figures)
 
 ```bash
 python code/run_analysis.py --artifacts-only   # Tables 3-10 and generated_results.tex
@@ -82,8 +82,9 @@ those in the submitted R2 manuscript.
 
 ### 2. Full rerun from the source records
 
-Requires the two restricted TATIC files in `data/TATIC/` (see `data/README.md`),
-`Rscript` on the `PATH`, and the R package `data.table`.
+Requires authorized local copies of all five source-data files at the paths listed
+in `data/README.md`, including the two restricted TATIC files, plus `Rscript` on the
+`PATH` and the R package `data.table`.
 
 ```bash
 python code/run_analysis.py      # calls Rscript code/prepare_data.R internally
@@ -108,13 +109,14 @@ the seed, and `verify_outputs.py` reports them separately.
 
 ## Verification status
 
-The public, restricted-data-free reproduction path was verified on 12 October 2026: Tables 3-10 and `generated_results.tex` were regenerated exactly, and Figures 1-7 matched the archived references pixel-for-pixel at 150 dpi using `code/verify_outputs.py`. This check does not refit the forecasting models; full refitting still requires authorized TATIC records.
+The public, source-data-free reproduction path was verified on 12 October 2026: Tables 3-10 and `generated_results.tex` were regenerated exactly, and Figures 1-7 matched the archived references pixel-for-pixel at 150 dpi using `code/verify_outputs.py`. This check does not refit the forecasting models; full refitting requires the local source files described in `data/README.md`.
 
 ## Relation to the revision history
 
 All statistical results were produced by one run of the R1 analysis. The R2
 revision changed presentation only: no model was refitted and no number changed.
-The accepted manuscript retains those R2 statistical results. This repository merges the two stages into a single pipeline:
+The accepted manuscript retains those R2 statistical results.
+This repository merges the two stages into a single pipeline:
 
 - `run_analysis.py` is the R1 analysis script. Its analytical code is unchanged.
   Changes: file paths; R2 table formatting (Table 7 prints the two identical
@@ -131,14 +133,11 @@ The accepted manuscript retains those R2 statistical results. This repository me
 
 ## Data and code availability
 
-The METAR (REDEMET) and planned-schedule (ANAC SIROS) inputs are public and
-included. The TATIC TWR movement and runway-use records are operational extracts
-that cannot be redistributed; access requires a request to NAV Brasil. See
-`data/README.md`.
+The METAR (REDEMET) and planned-schedule (ANAC SIROS) inputs are publicly obtainable, but the processed R data copies used by this analysis are not republished here. The TATIC TWR movement and runway-use records are restricted operational extracts and cannot be redistributed. See `data/README.md` for source provenance, expected paths, and checksums. The source-data-free reproduction path uses only the archived result records in `results/`.
 
 ## Provenance and citation
 
-The author-supplied reproducibility bundle used to initialize this repository is documented in `PROVENANCE.md`, including its SHA-256 checksum. The original internal bundle contained the two restricted TATIC files needed for a full rerun; those files are intentionally excluded from this public repository.
+The author-supplied reproducibility bundle used to initialize this repository is documented in `PROVENANCE.md`, including its SHA-256 checksum. The original internal bundle contained all five source-data copies used for a full rerun. None of those R data files is republished here: the three METAR/SIROS copies remain documented by source and checksum, while the two TATIC files are additionally restricted operational records.
 
 If you use this repository, cite the associated *Journal of Air Transport Management* article. Machine-readable citation metadata is provided in `CITATION.cff`.
 
