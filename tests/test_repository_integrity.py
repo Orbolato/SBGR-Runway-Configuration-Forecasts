@@ -53,7 +53,7 @@ def test_citation_points_to_canonical_repository() -> None:
     assert "JATM-D-26-00770" in text
 
 
-def test_documentation_does_not_claim_public_source_files_are_required_for_artifact_only_run() -> None:
+def test_documentation_states_public_artifact_path_is_source_data_independent() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    assert "artifact-only reproduction path" in readme
+    assert "fully public reproduction path" in readme
     assert "does not require any of the five" in readme
