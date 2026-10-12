@@ -1,0 +1,43 @@
+name: Bootstrap large authoritative files
+
+on:
+  push:
+    branches: [reproducibility/public-package]
+    paths:
+      - 'bootstrap/**'
+      - '.github/workflows/bootstrap-large-files.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: reproducibility/public-package
+      - name: Reconstruct authoritative files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p code results
+          cat bootstrap/run_analysis.py.gz.b64.* | base64 -d | gzip -dc > code/run_analysis.py
+          cat bootstrap/analysis_results.json.gz.b64.* | base64 -d | gzip -dc > results/analysis_results.json
+          echo '3643404833fcef12ce13955051ecf9de4f5d90edd1ea60509d08f55e030f2f8a  code/run_analysis.py' | sha256sum -c -
+          echo '90c8792270694f222095578dd0c7621171e5387f546beb157549dbb91c890bad  results/analysis_results.json' | sha256sum -c -
+      - name: Remove transfer-only bootstrap material
+        run: |
+          rm -rf bootstrap
+          rm .github/workflows/bootstrap-large-files.yml
+      - name: Commit reconstructed files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Nothing to commit.'
+          else
+            git commit -m 'Add authoritative analysis code and archived results'
+            git push origin HEAD:reproducibility/public-package
+          fi
