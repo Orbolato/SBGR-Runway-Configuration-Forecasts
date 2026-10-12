@@ -1,7 +1,7 @@
 # Provenance
 
 This repository was initialized from the author-supplied reproducibility bundle
-`sbgr-runway-configuration-forecasts.zip`, received on 12 October 2026.
+`sbgr-runway-configuration-forecasts.zip`, received on October 12, 2026.
 
 - Bundle SHA-256: `f902e43e24e52396a44bf3d382d3ec9cdaec2486c812ed7ea606e631e4afd219`
 - Manuscript: JATM-D-26-00770
@@ -9,10 +9,11 @@ This repository was initialized from the author-supplied reproducibility bundle
 - Venue: *Journal of Air Transport Management*, accepted for publication (2026)
 - Random seed used for reported results: `20260720`
 
-## Public files carried into the repository
+## Public-source processed inputs in the author bundle
 
-The following source-data files are redistributable inputs included in the public
-repository. SHA-256 values refer to the exact files in the author-supplied bundle.
+The author-supplied bundle contained the following processed inputs derived from
+public sources. Their exact row counts and SHA-256 checksums are recorded here so
+that an authorized local copy can be verified against the analysis package.
 
 | File | Rows | SHA-256 |
 | --- | ---: | --- |
@@ -20,7 +21,7 @@ repository. SHA-256 values refer to the exact files in the author-supplied bundl
 | `data/SIROS/Arrivals/dataSR_arr_SBGR.Rda` | 312,094 | `051894385eebc639d07422df02fc13b21acbc4e5aad38c08e2ac3954860a2ba4` |
 | `data/SIROS/Departures/dataSR_dep_SBGR.Rda` | 310,129 | `f5d94fd7d8e52addb1a4c728e01fe9e7a4456718867bdca184c400914def0bf0` |
 
-The archived numerical records used by the public reproduction path are also
+The archived numerical records used by the fully public reproduction path are
 preserved exactly:
 
 | File | SHA-256 |
@@ -52,6 +53,7 @@ The public repository supports exact regeneration of Tables 3-10,
 restricted operational data. It does **not** claim that a user without TATIC access
 can refit the forecasting models from raw operational records.
 
-A full rerun with authorized TATIC data can additionally be compared against the
-archived results using `code/verify_outputs.py`; wall-clock timing fields are
-reported separately because they are machine dependent.
+A full rerun with authorized TATIC data and the three public-source processed inputs
+can additionally be compared against the archived results using
+`code/verify_outputs.py`; wall-clock timing fields are reported separately because
+they are machine dependent.

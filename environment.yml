@@ -1,0 +1,10 @@
+name: sbgr-runway
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.9
+  - r-base=4.4.1
+  - r-data.table=1.16.2
+  - pip
+  - pip:
+      - -r requirements.txt

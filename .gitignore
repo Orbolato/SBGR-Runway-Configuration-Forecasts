@@ -1,0 +1,17 @@
+# Restricted operational records (TATIC TWR, NAV Brasil). They may not be
+# redistributed; see data/README.md. Never remove this rule.
+data/TATIC/**/*.Rda
+data/TATIC/**/*.rda
+data/TATIC/**/*.csv
+# Any interval grid exported from prepare_data.R contains TATIC-derived counts.
+analysis_grid*.csv
+
+# Regenerated outputs
+output/
+
+# Python / R
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+catboost_info/
