@@ -1,6 +1,6 @@
 # When Do Data-Driven Models Improve Runway-Configuration Forecasts?
 
-Code, public data, and archived results for the article
+Code, archived results, and data-provenance documentation for the article
 
 > Vieira, G. L. G. R., Gomes, I. G., Carvalho, L. O., Guterres, M. X., da Silva, E. J.,
 > and Caetano, M. *When Do Data-Driven Models Improve Runway-Configuration Forecasts?
@@ -9,7 +9,7 @@ Code, public data, and archived results for the article
 
 The study forecasts the runway configuration of São Paulo/Guarulhos International
 Airport (SBGR) 15, 30, and 60 minutes ahead from 87,540 fifteen-minute intervals
-(1 January 2022 to 30 June 2024). It compares majority, persistence, climatology,
+(January 1, 2022 to June 30, 2024). It compares majority, persistence, climatology,
 and a wind rule with logistic regression, random forest, and histogram gradient
 boosting, plus XGBoost, LightGBM, and three comparators adapted from published
 designs. Models are selected by expanding-window validation in 2023 and evaluated
@@ -29,12 +29,12 @@ code/
                       results record, Tables 3-10, the prose macros, and Figures 1-7
   make_figures.py     draws Figures 1-7 from the results record (no refitting)
   verify_outputs.py   checks a rerun against the archived results
-data/                 public source data plus restricted-data instructions; see data/README.md
+data/                 source-data documentation and restricted-data instructions
 results/
-  analysis_results.json   archived results record behind every reported number
-  figure_data.json        plotted series not held in the record (Figures 4, 5b, 6a)
-  figure_source_values.json  values the R2 artwork was drawn from (provenance only)
-reproduce.ps1, reproduce.sh   one-command reproduction
+  analysis_results.json      archived results record behind every reported number
+  figure_data.json           plotted series not held in the record (Figures 4, 5b, 6a)
+  figure_source_values.json  values used for the R2 artwork (provenance only)
+reproduce.ps1, reproduce.sh  one-command reproduction helpers
 ```
 
 ## Where each result comes from
@@ -82,8 +82,9 @@ those in the submitted R2 manuscript.
 
 ### 2. Full rerun from the source records
 
-Requires the two restricted TATIC files in `data/TATIC/` (see `data/README.md`),
-`Rscript` on the `PATH`, and the R package `data.table`.
+Requires the three public-source processed METAR/SIROS inputs plus the two
+restricted TATIC files at the paths documented in `data/README.md`, `Rscript` on
+the `PATH`, and the R package `data.table`.
 
 ```bash
 python code/run_analysis.py      # calls Rscript code/prepare_data.R internally
@@ -108,7 +109,7 @@ the seed, and `verify_outputs.py` reports them separately.
 
 ## Verification status
 
-The public, restricted-data-free reproduction path was verified on 12 October 2026: Tables 3-10 and `generated_results.tex` were regenerated exactly, and Figures 1-7 matched the archived references pixel-for-pixel at 150 dpi using `code/verify_outputs.py`. This check does not refit the forecasting models; full refitting still requires authorized TATIC records.
+The public, restricted-data-free reproduction path was verified on October 12, 2026: Tables 3-10 and `generated_results.tex` were regenerated exactly, and Figures 1-7 matched the archived references pixel-for-pixel at 150 dpi using `code/verify_outputs.py`. This check does not refit the forecasting models; full refitting still requires authorized TATIC records.
 
 ## Relation to the revision history
 
@@ -131,10 +132,15 @@ The accepted manuscript retains those R2 statistical results. This repository me
 
 ## Data and code availability
 
-The METAR (REDEMET) and planned-schedule (ANAC SIROS) inputs are public and
-included. The TATIC TWR movement and runway-use records are operational extracts
-that cannot be redistributed; access requires a request to NAV Brasil. See
-`data/README.md`.
+The METAR (REDEMET) and planned-schedule (ANAC SIROS) inputs derive from public
+sources. Their exact author-bundle copies, row counts, and checksums are documented
+in `data/README.md` and `PROVENANCE.md`. The TATIC TWR movement and runway-use
+records are restricted operational extracts that cannot be redistributed; access
+requires a separate request to NAV Brasil.
+
+The repository's fully public reproduction path does not require any of the five
+source-data files: it regenerates every reported table, macro, and figure from the
+archived numerical records in `results/`.
 
 ## Provenance and citation
 
