@@ -1,7 +1,7 @@
 # Data
 
-The full refit uses five R data files for São Paulo/Guarulhos (SBGR), 1 January 2022 to
-30 June 2024. `code/prepare_data.R` reads exactly these five files and nothing else.
+The full refit uses five R data files for São Paulo/Guarulhos (SBGR), January 1, 2022 to
+June 30, 2024. `code/prepare_data.R` reads exactly these five files and nothing else.
 The three METAR/SIROS objects derive from public sources; the two TATIC objects are
 restricted and must never be redistributed. The artifact-only reproduction path does
 not require any of these source files.
@@ -12,7 +12,7 @@ not require any of these source files.
 | `SIROS/Arrivals/dataSR_arr_SBGR.Rda` | `dataSR` | 312,094 | Planned arrivals, ANAC air services registry (SIROS) | Public-source processed input |
 | `SIROS/Departures/dataSR_dep_SBGR.Rda` | `dataSR` | 310,129 | Planned departures, ANAC air services registry (SIROS) | Public-source processed input |
 | `TATIC/Arrivals/dataTF_arr_SBGR.Rda` | `dataTF` | 405,949 | Actual landings and runways, TATIC TWR at TWR-GRU | **Restricted; not in the repository** |
-| `TATIC/Departures/dataTF_dep_SBGR.Rda` | `dataTF` | 405,816 | Actual take-offs and runways, TATIC TWR at TWR-GRU | **Restricted; not in the repository** |
+| `TATIC/Departures/dataTF_dep_SBGR.Rda` | `dataTF` | 405,816 | Actual takeoffs and runways, TATIC TWR at TWR-GRU | **Restricted; not in the repository** |
 
 MD5 checksums of the files used for the reported results:
 
@@ -33,14 +33,14 @@ MD5 checksums of the files used for the reported results:
   a maximum accepted age of 120 minutes.
 - **SIROS** (`dataSR`): `Chegada Prevista` (planned arrival time) and
   `Partida Prevista` (planned departure time), counted per 15-minute target bin.
-- **TATIC TWR** (`dataTF`): `arr` / `dep` (actual landing / take-off time) and
+- **TATIC TWR** (`dataTF`): `arr` / `dep` (actual landing / takeoff time) and
   `runway`. Runways beginning with 09 or 10 are grouped as direction 10, and those
   beginning with 27 or 28 as direction 28.
 
 The METAR and SIROS objects were extracted from the public sources and stored as R
 data files before this analysis. The scripts used for that extraction are not part
-of this repository. Their exact author-bundle copies and checksums are documented in
-`../PROVENANCE.md`.
+of this repository. Their exact author-bundle copies, row counts, and checksums are
+documented in `../PROVENANCE.md`.
 
 ## Restricted data
 
