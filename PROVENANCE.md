@@ -9,11 +9,12 @@ This repository was initialized from the author-supplied reproducibility bundle
 - Venue: *Journal of Air Transport Management*, accepted for publication (2026)
 - Random seed used for reported results: `20260720`
 
-## Public-source processed inputs in the author bundle
+## Public-source processed inputs preserved in this repository
 
 The author-supplied bundle contained the following processed inputs derived from
-public sources. Their exact row counts and SHA-256 checksums are recorded here so
-that an authorized local copy can be verified against the analysis package.
+public sources. The exact author-bundle copies used in the analysis are preserved
+in this repository at the paths below. Their row counts and SHA-256 checksums are
+recorded so the committed bytes can be verified independently.
 
 | File | Rows | SHA-256 |
 | --- | ---: | --- |
@@ -21,8 +22,13 @@ that an authorized local copy can be verified against the analysis package.
 | `data/SIROS/Arrivals/dataSR_arr_SBGR.Rda` | 312,094 | `051894385eebc639d07422df02fc13b21acbc4e5aad38c08e2ac3954860a2ba4` |
 | `data/SIROS/Departures/dataSR_dep_SBGR.Rda` | 310,129 | `f5d94fd7d8e52addb1a4c728e01fe9e7a4456718867bdca184c400914def0bf0` |
 
-The archived numerical records used by the fully public reproduction path are
-preserved exactly:
+These are processed analysis inputs rather than raw-source downloads. The scripts
+that originally extracted them from REDEMET and SIROS are not part of the bundle or
+this repository. No separate data license is asserted here; applicable third-party
+source terms remain in force.
+
+The archived numerical records used by the public artifact-only reproduction path
+are also preserved exactly:
 
 | File | SHA-256 |
 | --- | --- |
@@ -51,9 +57,9 @@ authorized copies and any derived interval grid cannot be committed accidentally
 The public repository supports exact regeneration of Tables 3-10,
 `generated_results.tex`, and Figures 1-7 from the archived result records without
 restricted operational data. It does **not** claim that a user without TATIC access
-can refit the forecasting models from raw operational records.
+can refit the forecasting models from the source records.
 
-A full rerun with authorized TATIC data and the three public-source processed inputs
-can additionally be compared against the archived results using
-`code/verify_outputs.py`; wall-clock timing fields are reported separately because
-they are machine dependent.
+A full rerun with separately authorized TATIC data and the three included
+public-source processed inputs can additionally be compared against the archived
+results using `code/verify_outputs.py`; wall-clock timing fields are reported
+separately because they are machine dependent.
