@@ -1,6 +1,6 @@
 # When Do Data-Driven Models Improve Runway-Configuration Forecasts?
 
-Code, archived results, and data-provenance documentation for the article
+Code, public-source processed data, archived results, and provenance documentation for the article
 
 > Vieira, G. L. G. R., Gomes, I. G., Carvalho, L. O., Guterres, M. X., da Silva, E. J.,
 > and Caetano, M. *When Do Data-Driven Models Improve Runway-Configuration Forecasts?
@@ -29,7 +29,10 @@ code/
                       results record, Tables 3-10, the prose macros, and Figures 1-7
   make_figures.py     draws Figures 1-7 from the results record (no refitting)
   verify_outputs.py   checks a rerun against the archived results
-data/                 source-data documentation and restricted-data instructions
+data/
+  METAR/              exact public-source processed METAR input used in the study
+  SIROS/              exact public-source processed arrival/departure schedule inputs
+  TATIC/              documentation only; restricted operational records are excluded
 results/
   analysis_results.json      archived results record behind every reported number
   figure_data.json           plotted series not held in the record (Figures 4, 5b, 6a)
@@ -82,7 +85,8 @@ those in the submitted R2 manuscript.
 
 ### 2. Full rerun from the source records
 
-Requires the three public-source processed METAR/SIROS inputs plus the two
+The three public-source processed METAR/SIROS inputs used in the study are included
+under `data/METAR/` and `data/SIROS/`. A full refit additionally requires the two
 restricted TATIC files at the paths documented in `data/README.md`, `Rscript` on
 the `PATH`, and the R package `data.table`.
 
@@ -132,19 +136,21 @@ The accepted manuscript retains those R2 statistical results. This repository me
 
 ## Data and code availability
 
-The METAR (REDEMET) and planned-schedule (ANAC SIROS) inputs derive from public
-sources. Their exact author-bundle copies, row counts, and checksums are documented
-in `data/README.md` and `PROVENANCE.md`. The TATIC TWR movement and runway-use
-records are restricted operational extracts that cannot be redistributed; access
-requires a separate request to NAV Brasil.
+The exact processed METAR (REDEMET) and planned-schedule (ANAC SIROS) inputs used in
+the study are included in this repository under `data/METAR/` and `data/SIROS/`.
+Their row counts, MD5 checksums used in the analysis, and SHA-256 checksums of the
+author-bundle copies are documented in `data/README.md` and `PROVENANCE.md`.
+The TATIC TWR movement and runway-use records are restricted operational extracts
+that cannot be redistributed; access requires a separate request to NAV Brasil.
 
-The repository's fully public reproduction path does not require any of the five
-source-data files: it regenerates every reported table, macro, and figure from the
-archived numerical records in `results/`.
+The repository's artifact-only reproduction path does not require the source-data
+files: it regenerates every reported table, macro, and figure from the archived
+numerical records in `results/`. Users who separately obtain authorized TATIC
+records can combine them with the included METAR/SIROS inputs to run the full refit.
 
 ## Provenance and citation
 
-The author-supplied reproducibility bundle used to initialize this repository is documented in `PROVENANCE.md`, including its SHA-256 checksum. The original internal bundle contained the two restricted TATIC files needed for a full rerun; those files are intentionally excluded from this public repository.
+The author-supplied reproducibility bundle used to initialize this repository is documented in `PROVENANCE.md`, including its SHA-256 checksum. The public-source processed METAR/SIROS files in that bundle are preserved here byte-for-byte. The original internal bundle also contained the two restricted TATIC files needed for a full rerun; those files are intentionally excluded from this public repository.
 
 If you use this repository, cite the associated *Journal of Air Transport Management* article. Machine-readable citation metadata is provided in `CITATION.cff`.
 

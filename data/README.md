@@ -2,26 +2,35 @@
 
 The full refit uses five R data files for São Paulo/Guarulhos (SBGR), January 1, 2022 to
 June 30, 2024. `code/prepare_data.R` reads exactly these five files and nothing else.
-The three METAR/SIROS objects derive from public sources; the two TATIC objects are
+The three METAR/SIROS objects derive from public sources and their exact processed
+copies used in the study are included in this repository. The two TATIC objects are
 restricted and must never be redistributed. The artifact-only reproduction path does
 not require any of these source files.
 
 | File | R object | Rows | Source | Status |
 |---|---|---:|---|---|
-| `METAR/dataMETAR_SBGR.Rda` | `dataMETAR` | 27,717 | Historical METAR reports, REDEMET (DECEA) | Public-source processed input |
-| `SIROS/Arrivals/dataSR_arr_SBGR.Rda` | `dataSR` | 312,094 | Planned arrivals, ANAC air services registry (SIROS) | Public-source processed input |
-| `SIROS/Departures/dataSR_dep_SBGR.Rda` | `dataSR` | 310,129 | Planned departures, ANAC air services registry (SIROS) | Public-source processed input |
+| `METAR/dataMETAR_SBGR.Rda` | `dataMETAR` | 27,717 | Historical METAR reports, REDEMET (DECEA) | **Included public-source processed input** |
+| `SIROS/Arrivals/dataSR_arr_SBGR.Rda` | `dataSR` | 312,094 | Planned arrivals, ANAC air services registry (SIROS) | **Included public-source processed input** |
+| `SIROS/Departures/dataSR_dep_SBGR.Rda` | `dataSR` | 310,129 | Planned departures, ANAC air services registry (SIROS) | **Included public-source processed input** |
 | `TATIC/Arrivals/dataTF_arr_SBGR.Rda` | `dataTF` | 405,949 | Actual landings and runways, TATIC TWR at TWR-GRU | **Restricted; not in the repository** |
 | `TATIC/Departures/dataTF_dep_SBGR.Rda` | `dataTF` | 405,816 | Actual takeoffs and runways, TATIC TWR at TWR-GRU | **Restricted; not in the repository** |
 
-MD5 checksums of the files used for the reported results:
+MD5 checksums of the five files used for the reported results:
 
-```
+```text
 593ed37590fb9b91055e9aa0dad9872a  METAR/dataMETAR_SBGR.Rda
 49f9c6597bf4b44b34a71b8f947a2128  SIROS/Arrivals/dataSR_arr_SBGR.Rda
 95b34e582416720fb23d0cf72d1fc3cb  SIROS/Departures/dataSR_dep_SBGR.Rda
 947e6b0ef5a832a102df31628cba92cd  TATIC/Arrivals/dataTF_arr_SBGR.Rda
 06d17f706151c1222b8a16d02ed66809  TATIC/Departures/dataTF_dep_SBGR.Rda
+```
+
+SHA-256 checksums of the exact public-source processed files preserved here:
+
+```text
+eae98ebe04dc4a072e1d718b35236367777ed7ebffcb9541c881cdd3654a5f77  METAR/dataMETAR_SBGR.Rda
+051894385eebc639d07422df02fc13b21acbc4e5aad38c08e2ac3954860a2ba4  SIROS/Arrivals/dataSR_arr_SBGR.Rda
+f5d94fd7d8e52addb1a4c728e01fe9e7a4456718867bdca184c400914def0bf0  SIROS/Departures/dataSR_dep_SBGR.Rda
 ```
 
 ## Columns used
@@ -39,8 +48,10 @@ MD5 checksums of the files used for the reported results:
 
 The METAR and SIROS objects were extracted from the public sources and stored as R
 data files before this analysis. The scripts used for that extraction are not part
-of this repository. Their exact author-bundle copies, row counts, and checksums are
-documented in `../PROVENANCE.md`.
+of this repository. The included files are the exact author-bundle copies used by
+the analysis; their row counts and SHA-256 checksums are also recorded in
+`../PROVENANCE.md`. No separate data license is asserted by this repository, and
+third-party source terms remain applicable.
 
 ## Restricted data
 
