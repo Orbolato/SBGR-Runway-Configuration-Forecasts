@@ -1,0 +1,19 @@
+# Source-data files are local only. The TATIC records are restricted, and the
+# provider-derived METAR/SIROS R-data copies are documented by checksum rather
+# than rehosted. See data/README.md and PROVENANCE.md.
+data/**/*.Rda
+data/**/*.rda
+data/**/*.csv
+
+# Any interval grid exported from prepare_data.R contains TATIC-derived counts.
+analysis_grid*.csv
+
+# Regenerated outputs
+output/
+
+# Python / R
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+catboost_info/
