@@ -34,7 +34,11 @@ def test_archived_results_are_exact() -> None:
 def test_restricted_tatic_records_are_absent() -> None:
     restricted = ROOT / "data" / "TATIC"
     if restricted.exists():
-        forbidden = [p for p in restricted.rglob("*") if p.is_file() and p.suffix.lower() in {".rda", ".csv"}]
+        forbidden = [
+            path
+            for path in restricted.rglob("*")
+            if path.is_file() and path.suffix.lower() in {".rda", ".csv"}
+        ]
         assert not forbidden, f"Restricted TATIC data must not be committed: {forbidden}"
 
 
@@ -47,3 +51,9 @@ def test_citation_points_to_canonical_repository() -> None:
     canonical = "https://github.com/Orbolato/SBGR-Runway-Configuration-Forecasts"
     assert canonical in text
     assert "JATM-D-26-00770" in text
+
+
+def test_documentation_does_not_claim_public_source_files_are_required_for_artifact_only_run() -> None:
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "artifact-only reproduction path" in readme
+    assert "does not require any of the five" in readme
