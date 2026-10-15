@@ -29,6 +29,7 @@ preferred-citation:
   type: article
   title: "When Do Data-Driven Models Improve Runway-Configuration Forecasts? Multi-Horizon Operational Evidence from São Paulo/Guarulhos"
   journal: "Journal of Air Transport Management"
+  volume: "139"
   authors:
     - family-names: Vieira
       given-names: Gabriel Luiz Goulart Rufino
