@@ -5,7 +5,7 @@ Code, public-source processed data, archived results, and provenance documentati
 > Vieira, G. L. G. R., Gomes, I. G., Carvalho, L. O., Guterres, M. X., da Silva, E. J.,
 > and Caetano, M. *When Do Data-Driven Models Improve Runway-Configuration Forecasts?
 > Multi-Horizon Operational Evidence from São Paulo/Guarulhos.* *Journal of Air
-> Transport Management* (2026), article 103147. https://doi.org/10.1016/j.jairtraman.2026.103147
+> Transport Management* 139 (2026), article 103147. https://doi.org/10.1016/j.jairtraman.2026.103147
 
 The study forecasts the runway configuration of São Paulo/Guarulhos International
 Airport (SBGR) 15, 30, and 60 minutes ahead from 87,540 fifteen-minute intervals
@@ -17,7 +17,7 @@ on a locked January–June 2024 test period.
 
 ## Publication status
 
-The article is published in the *Journal of Air Transport Management* (2026), article 103147. Version of record: https://doi.org/10.1016/j.jairtraman.2026.103147
+The article is published in *Journal of Air Transport Management*, volume 139 (2026), article 103147. Version of record: https://doi.org/10.1016/j.jairtraman.2026.103147
 
 ## Repository layout
 
