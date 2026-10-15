@@ -5,7 +5,7 @@ Code, public-source processed data, archived results, and provenance documentati
 > Vieira, G. L. G. R., Gomes, I. G., Carvalho, L. O., Guterres, M. X., da Silva, E. J.,
 > and Caetano, M. *When Do Data-Driven Models Improve Runway-Configuration Forecasts?
 > Multi-Horizon Operational Evidence from São Paulo/Guarulhos.* *Journal of Air
-> Transport Management*, accepted for publication (2026). Manuscript JATM-D-26-00770.
+> Transport Management* (2026), article 103147. https://doi.org/10.1016/j.jairtraman.2026.103147
 
 The study forecasts the runway configuration of São Paulo/Guarulhos International
 Airport (SBGR) 15, 30, and 60 minutes ahead from 87,540 fifteen-minute intervals
@@ -17,7 +17,7 @@ on a locked January–June 2024 test period.
 
 ## Publication status
 
-The article has been accepted for publication in the *Journal of Air Transport Management* (2026). A DOI, volume, and article number had not yet been assigned when this repository was prepared; citation metadata will be updated when those production details become available.
+The article is published in the *Journal of Air Transport Management* (2026), article 103147. Version of record: https://doi.org/10.1016/j.jairtraman.2026.103147
 
 ## Repository layout
 
@@ -119,7 +119,7 @@ The public, restricted-data-free reproduction path was verified on October 12, 2
 
 All statistical results were produced by one run of the R1 analysis. The R2
 revision changed presentation only: no model was refitted and no number changed.
-The accepted manuscript retains those R2 statistical results. This repository merges the two stages into a single pipeline:
+The published article retains those R2 statistical results. This repository merges the two stages into a single pipeline:
 
 - `run_analysis.py` is the R1 analysis script. Its analytical code is unchanged.
   Changes: file paths; R2 table formatting (Table 7 prints the two identical
@@ -152,6 +152,6 @@ records can combine them with the included METAR/SIROS inputs to run the full re
 
 The author-supplied reproducibility bundle used to initialize this repository is documented in `PROVENANCE.md`, including its SHA-256 checksum. The public-source processed METAR/SIROS files in that bundle are preserved here byte-for-byte. The original internal bundle also contained the two restricted TATIC files needed for a full rerun; those files are intentionally excluded from this public repository.
 
-If you use this repository, cite the associated *Journal of Air Transport Management* article. Machine-readable citation metadata is provided in `CITATION.cff`.
+If you use this repository, cite the published *Journal of Air Transport Management* article: https://doi.org/10.1016/j.jairtraman.2026.103147. Machine-readable citation metadata is provided in `CITATION.cff`.
 
 No software or data license is asserted by this repository. Third-party source-data terms and restrictions remain applicable.
